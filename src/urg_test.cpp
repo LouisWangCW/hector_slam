@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 {
   printf("main Start\n");
 
-  ros::init(argc, argv, "urg_test");
+  ros::init(argc, argv, "urg_hector_slam");
   ros::NodeHandle n;
   ros::Subscriber laser = n.subscribe("scan", 1, laser_callback);
   ros::Subscriber map_sub_ = n.subscribe("map", 2, mapCallback);
