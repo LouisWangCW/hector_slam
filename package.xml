@@ -2,9 +2,7 @@
 <package format="2">
   <name>urg_test</name>
   <version>1.0.0</version>
-  <description>The urg_test package</description>
-
-  <maintainer email="info@browniealice.net">BrownieAlice</maintainer>
+  <description>URG_hector_SLAM package</description>
   <license>GPLv3</license>
 
   <depend>urg_node</depend>
