@@ -4,7 +4,7 @@
 #include <nav_msgs/GetMap.h>
 #include <tf/tf.h>
 #include <opencv2/opencv.hpp>
-#include "urg_test.hpp"
+#include "urg_hector_slam.hpp"
 using namespace cv;
 
 
