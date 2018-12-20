@@ -20,7 +20,9 @@ include_directories(
 )
 
 add_executable(${PROJECT_NAME}
-  ./src/urg_test.cpp
+  ./src/urg_hector_slam.cpp
+  ./src/urg_hector_slam.hpp
+  ./src/def.hpp
 )
 target_link_libraries(${PROJECT_NAME}
    ${catkin_LIBRARIES}
