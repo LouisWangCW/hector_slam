@@ -1,11 +1,22 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>urg_test</name>
+  <name>urg_hector_slam</name>
   <version>1.0.0</version>
-  <description>URG_hector_SLAM package</description>
+  <description>The urg_hector_slam package</description>
+  <maintainer email="louis@tmsuk.biz">LouisWangCW</maintainer>
   <license>GPLv3</license>
-
   <depend>urg_node</depend>
+  <depend>dynamic_reconfigure</depend>
+  <depend>laser_proc</depend>
+  <depend>message_generation</depend>
+  <depend>nodelet</depend>
+  <depend>rosconsole</depend>
+  <depend>roscpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>std_srvs</depend>
+  <depend>tf</depend>
+  <depend>urg_c</depend>
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>roscpp</build_depend>
   <build_depend>sensor_msgs</build_depend>
