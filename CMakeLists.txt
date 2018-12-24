@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(urg_test)
+project(urg_hector_slam)
 
 add_compile_options(-std=c++11)
 
