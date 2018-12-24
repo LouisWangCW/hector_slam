@@ -53,23 +53,33 @@ void mapCallback(const nav_msgs::OccupancyGridConstPtr &map) {
 		map_theta
 	);
 
-
 	Mat img = Mat::zeros(cv::Size(map->info.width, map->info.height), CV_8UC1);
 	
+	cv::Point MinPos,MaxPos;
+	MinPos.x = map->info.width/2;
+	MinPos.y = map->info.height/2;
+	MaxPos = MinPos;
+
 	for (unsigned int y = 0; y < map->info.height; y++) {
 		for (unsigned int x = 0; x < map->info.width; x++) {
 			unsigned int i = x + (map->info.height - y - 1) * map->info.width;
 			int intensity = 205;
-			if (map->data[i] >= 0 && map->data[i] <= 100)
+			if (map->data[i] >= 0 && map->data[i] <= 100){
 				intensity = round((float)(100.0 - map->data[i])*2.55);
+
+				if (MinPos.x > x)
+                            	    MinPos.x = x;
+	                        if (MinPos.y > y)
+                    		    MinPos.y = y;
+	                        if (MaxPos.x < x)
+        	                    MaxPos.x = x;
+                	        if (MaxPos.y < y)
+                        	    MaxPos.y = y;
+
+			}
 			img.at<unsigned char>(y, x) = intensity;
 		}
 	}
-
-	cv::Point MinPos, MaxPos;
-
-	MinPos = cv::Point(700, 700);
-	MaxPos = cv::Point(map->info.height -700, map->info.width-700);
 
 	cv::Rect rect1(MinPos, MaxPos);
 	cv::Mat img_out =  img(rect1);
