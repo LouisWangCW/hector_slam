@@ -1,10 +1,15 @@
 <?xml version="1.0"?>
-<package format="2">
+  <package format="2">
   <name>urg_hector_slam</name>
-  <version>1.0.0</version>
+  <version>0.1.11</version>
   <description>The urg_hector_slam package</description>
-  <maintainer email="louis@tmsuk.biz">LouisWangCW</maintainer>
-  <license>BSD</license>  
+  <maintainer email="tony.baltovski@gmail.com">Tony Baltovski</maintainer>
+  <license>BSD</license>
+  <url type="website">http://ros.org/wiki/urg_node</url>
+  <url type="bugtracker">https://github.com/ros-drivers/urg_node/issues</url>
+  <url type="repository">https://github.com/ros-drivers/urg_node</url>
+  <author email="chadrockey@gmail.com">Chad Rockey</author>
+  <author email="modriscoll@clearpath.ai">Mike O'Driscoll</author>
   <buildtool_depend>catkin</buildtool_depend>
   <depend>diagnostic_updater</depend>
   <depend>dynamic_reconfigure</depend>
@@ -21,6 +26,5 @@
   <exec_depend>message_runtime</exec_depend>
   <test_depend>roslint</test_depend>
   <test_depend>roslaunch</test_depend>
-  <export>
-  </export>
-</package>
+  <export> </export>
+  </package>
