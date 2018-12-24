@@ -4,8 +4,10 @@
   <version>1.0.0</version>
   <description>The urg_hector_slam package</description>
   <maintainer email="louis@tmsuk.biz">LouisWangCW</maintainer>
-  <license>GPLv3</license>
-  <depend>urg_node</depend>
+  <license>BSD</license>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>diagnostic_updater</depend>
   <depend>dynamic_reconfigure</depend>
   <depend>laser_proc</depend>
   <depend>message_generation</depend>
@@ -17,14 +19,9 @@
   <depend>std_srvs</depend>
   <depend>tf</depend>
   <depend>urg_c</depend>
-  <buildtool_depend>catkin</buildtool_depend>
-  <build_depend>roscpp</build_depend>
-  <build_depend>sensor_msgs</build_depend>
-  <build_export_depend>roscpp</build_export_depend>
-  <build_export_depend>sensor_msgs</build_export_depend>
-  <exec_depend>roscpp</exec_depend>
-  <exec_depend>sensor_msgs</exec_depend>
-
+  <exec_depend>message_runtime</exec_depend>
+  <test_depend>roslint</test_depend>
+  <test_depend>roslaunch</test_depend>
   <export>
   </export>
 </package>
