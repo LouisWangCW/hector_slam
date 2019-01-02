@@ -1,30 +1,11 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(urg_hector_slam)
+project(hector_slam_example)
 
-add_compile_options(-std=c++11)
+find_package(catkin REQUIRED)
 
-find_package(catkin REQUIRED COMPONENTS
-  roscpp
-  sensor_msgs
-  cv_bridge
-)
+catkin_package()
 
-find_package(OpenCV REQUIRED)
+install(DIRECTORY launch 
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+  USE_SOURCE_PERMISSIONS)
 
-catkin_package(
-)
-
-include_directories(
-  ${catkin_INCLUDE_DIRS}
-  ${OpenCV_INCLUDE_DIRS}
-)
-
-add_executable(${PROJECT_NAME}
-  ./src/urg_hector_slam.cpp
-  ./src/urg_hector_slam.hpp
-  ./src/def.hpp
-)
-target_link_libraries(${PROJECT_NAME}
-   ${catkin_LIBRARIES}
-   ${OpenCV_LIBRARIES}  
-)
