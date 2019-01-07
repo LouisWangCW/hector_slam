@@ -32,8 +32,8 @@ void laser_callback(const sensor_msgs::LaserScan &msg)
 	//const auto intensity = msg.intensities.at(posi);
 	//ROS_INFO_STREAM("ranges[" << posi << "]:" << length << ", intensities[" << posi << "]:" << intensity);
 
-	printf("\n");
-	ROS_INFO_STREAM("ranges[" << posi << "]:" << length << "_max" << AngleMin << "_min"<< AngleMax);
+	//printf("\n");
+	//ROS_INFO_STREAM("ranges[" << posi << "]:" << length << "_max" << AngleMin << "_min"<< AngleMax);
 
 }
 
@@ -81,11 +81,21 @@ void mapCallback(const nav_msgs::OccupancyGridConstPtr &map) {
 		}
 	}
 
+	int width = MaxPos.x - MinPos.x;
+	int height = MaxPos.y - MinPos.y;
 	cv::Rect rect1(MinPos, MaxPos);
-	cv::Mat img_out =  img(rect1);
 
+	cv::Mat img_out;
+	if (width == 0 || height == 0){
+		img_out =  Mat::zeros(cv::Size(300,300), CV_8UC1);
+	}
+	else {
+		img(rect1).copyTo(img_out);
+	}
 
+	printf("Min=(%d,%d)_Max(%d,%d)_width(%d),height(%d)\n",MinPos.x,MinPos.y,MaxPos.x,MaxPos.y, width, height);
 	imshow("mapSHow", img_out);
+
 	cvWaitKey(10);
 	//ros::shutdown();
 }
